@@ -54,7 +54,7 @@ public class DocumentsFragment extends Fragment implements DocumentListener {
             .get()
             .addOnCompleteListener(task -> {
                loading(false);
-               if (task.isSuccessful() && task.getResult() != null) {
+               if (task.isSuccessful() && task.getResult() != null  && task.getResult().size() > 0) {
                    List<Document> documents = new ArrayList<>();
                    for(QueryDocumentSnapshot queryDocumentSnapshot : task.getResult()) {
                        Document document = new Document();

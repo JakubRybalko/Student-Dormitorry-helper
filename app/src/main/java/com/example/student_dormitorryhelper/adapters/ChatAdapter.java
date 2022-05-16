@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.student_dormitorryhelper.databinding.ItemConstainerReceivedMessageBinding;
 import com.example.student_dormitorryhelper.databinding.ItemContainerSentMessageBinding;
 import com.example.student_dormitorryhelper.models.ChatMessage;
+import com.example.student_dormitorryhelper.utilities.Constants;
 import com.example.student_dormitorryhelper.utilities.UserManager;
 import com.squareup.picasso.Picasso;
 
@@ -98,11 +99,19 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     void setData(ChatMessage chatMessage, String userFbId) {
       binding.textMassage.setText(chatMessage.message);
       binding.textDateTime.setText(chatMessage.dateTime);
+      if(userFbId.equals(Constants.KEY_RESIDENT_COUNCIL_USER_ID)) {
+        loadImage(Constants.RESIDENT_COUNCIL_PIC_URL);
+      } else {
+        loadImage("https://graph.facebook.com/"
+            + userFbId
+            + "/picture?type=small&access_token=");
+      }
+    }
+
+    void loadImage(String url) {
       Picasso
           .get()
-          .load("https://graph.facebook.com/"
-              + userFbId
-              + "/picture?type=large&access_token=")
+          .load(url)
           .fit()
           .centerCrop()
           .into(binding.imageProfile);

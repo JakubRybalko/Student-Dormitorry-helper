@@ -41,7 +41,7 @@ public class PlanDescriptionFragment extends Fragment {
         .get()
         .addOnCompleteListener(task -> {
           loading(false);
-          if (task.isSuccessful() && task.getResult() != null) {
+          if (task.isSuccessful() && task.getResult() != null  && task.getResult().size() > 0) {
             for(QueryDocumentSnapshot queryDocumentSnapshot : task.getResult()) {
               if(queryDocumentSnapshot.getString(Constants.KEY_PLAN_TITLE).equals(title)) {
                 binding.title.setText(queryDocumentSnapshot.getString(Constants.KEY_PLAN_TITLE));

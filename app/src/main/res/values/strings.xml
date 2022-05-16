@@ -5,8 +5,8 @@
     <string name="title_chat">Chat</string>
     <string name="title_plan">Plan</string>
     <string name="textTest">TextView</string>
-    <string name="welcome_back">Welcome Back!</string>
-    <string name="login_to_continue">Login to continue</string>
+    <string name="welcome_back">Witam spowrotem!</string>
+    <string name="login_to_continue">Zaloguj się, aby kontynuować</string>
 
 
     <string name="facebook_app_id">2135316823302587</string>
@@ -14,13 +14,14 @@
     <string name="facebook_client_token">cc2d21c2eba357c6ec22c416d4fa3251</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="select_user">Select User</string>
+    <string name="select_user">Wybierz urzytkownika</string>
     <string name="type_to_message">Type to message</string>
-    <string name="select_document_to_download">Select document to download</string>
+    <string name="select_document_to_download">Wybierz dokument do pobrania</string>
     <string name="zamknij">Zamknij</string>
     <string name="pok_j_gier_i_zabaw">Pokój gier i zabaw</string>
     <string name="localization">Lokalizacja</string>
     <string name="keeper">Opiekun</string>
+    <string name="continue_button">Kontunuuj</string>
 
 
 </resources>

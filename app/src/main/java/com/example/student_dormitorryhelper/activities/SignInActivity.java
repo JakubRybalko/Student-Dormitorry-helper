@@ -79,8 +79,6 @@ public class SignInActivity extends AppCompatActivity {
         userManager = UserManager.getInstance();
         setSendToUser();
 
-//        loginButton.setPermissions(Arrays.asList("public_profile, user_photos"));
-
         setListeners();
 
         callbackManager = CallbackManager.Factory.create();
@@ -134,21 +132,6 @@ public class SignInActivity extends AppCompatActivity {
         userManager.setSendToUser(user);
     }
 
-//    private void addDataToFirestore() {
-//        FirebaseFirestore database = FirebaseFirestore.getInstance();
-//        HashMap<String, Object> data = new HashMap<>();
-//        data.put("first_name", "Kuba");
-//        data.put("second_name", "Rybałko");
-//        database.collection("user")
-//                .add(data)
-//                .addOnSuccessListener(documentReference -> {
-//                    Toast.makeText(getApplicationContext(), "Data Inserted", Toast.LENGTH_SHORT).show();
-//                })
-//                .addOnFailureListener(exception -> {
-//                    Toast.makeText(getApplicationContext(), exception.getMessage(), Toast.LENGTH_SHORT).show();
-//                });
-//    }
-
     private void handleFacebookToken(AccessToken accessToken) {
         Log.d(TAG, "handleFacebookToken" + accessToken);
 
@@ -180,7 +163,7 @@ public class SignInActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     private void updateUI(FirebaseUser firebaseUser) {
         if(firebaseUser != null) {
-            welcomeText.setText("Hi " + firebaseUser.getDisplayName() + "!");
+            welcomeText.setText("Witaj " + firebaseUser.getDisplayName() + "!");
             materialButton.setVisibility(View.VISIBLE);
             descriptionText.setVisibility(View.INVISIBLE);
         } else {

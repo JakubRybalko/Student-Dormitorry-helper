@@ -113,7 +113,7 @@ public class ResidentsCouncilChatFragment extends Fragment {
 
   private void loadReceiverDetails() {
       binding.inputMessage.setHint(
-          "Message " +
+          "Napisz do " +
           userManager.getSendToUser().firstName +
               " " +
               userManager.getSendToUser().secondName);

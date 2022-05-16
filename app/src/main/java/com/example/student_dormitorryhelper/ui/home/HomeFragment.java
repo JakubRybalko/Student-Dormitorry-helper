@@ -30,6 +30,8 @@ import org.json.JSONException;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -46,7 +48,6 @@ public class HomeFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
 
-//        loadData();
         loadDataFirebase();
 
         return binding.getRoot();
@@ -60,7 +61,8 @@ public class HomeFragment extends Fragment {
             .get()
             .addOnCompleteListener(task -> {
                 loading(false);
-                if(task.isSuccessful() && task.getResult() != null) {
+                posts = new ArrayList<>();
+                if(task.isSuccessful() && task.getResult() != null && task.getResult().size() > 0) {
                     for (QueryDocumentSnapshot queryDocumentSnapshot : task.getResult()) {
                         FacebookPost facebookPost = new FacebookPost();
                         facebookPost.setId(queryDocumentSnapshot.getString(Constants.KEY_FB_POST_ID));
@@ -70,6 +72,7 @@ public class HomeFragment extends Fragment {
                         posts.add(facebookPost);
                     }
                     if(posts.size() > 0) {
+                        Collections.sort(posts, (a, b) -> (int) b.getCreatedTime().compareTo(a.getCreatedTime()));
                         PostsAdapter postsAdapter = new PostsAdapter(posts);
                         binding.postsRecyclerView.setAdapter(postsAdapter);
                         binding.postsRecyclerView.setVisibility(View.VISIBLE);

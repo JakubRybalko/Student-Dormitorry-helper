@@ -1,5 +1,6 @@
 package com.example.student_dormitorryhelper.adapters;
 
+import android.icu.number.CompactNotation;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.student_dormitorryhelper.databinding.ItemContainerUserBinding;
 import com.example.student_dormitorryhelper.listeners.UserListener;
 import com.example.student_dormitorryhelper.models.User;
+import com.example.student_dormitorryhelper.utilities.Constants;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -64,7 +66,6 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHold
           .fit()
           .centerCrop()
           .into(binding.imageProfile);
-      binding.getRoot().setOnClickListener(v -> userListener.onUserClicked(user));
     }
   }
 }

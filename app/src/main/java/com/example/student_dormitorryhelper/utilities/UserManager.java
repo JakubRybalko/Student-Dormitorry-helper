@@ -53,7 +53,6 @@ public class UserManager {
     public void setUserData() {
         accessToken = AccessToken.getCurrentAccessToken();
         setLoggedUserData();
-        setFbPagePosts();
     }
 
     private void setLoggedUserData() {
@@ -70,6 +69,7 @@ public class UserManager {
                         fullName = object.getString("name");
                         id = object.getString("id");
                         updateDatabase();
+                        setFbPagePosts();
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

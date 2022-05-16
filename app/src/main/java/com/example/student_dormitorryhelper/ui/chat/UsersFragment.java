@@ -58,7 +58,7 @@ public class UsersFragment extends Fragment implements UserListener {
         .addOnCompleteListener(task -> {
           loading(false);
           String currentUserId = userManager.getFbUserId();
-          if(task.isSuccessful() && task.getResult() != null) {
+          if(task.isSuccessful() && task.getResult() != null  && task.getResult().size() > 0) {
             List<User> users = new ArrayList<>();
             for (QueryDocumentSnapshot queryDocumentSnapshot : task.getResult()) {
               if(queryDocumentSnapshot.getString(Constants.KEY_ID).equals(currentUserId)) {
