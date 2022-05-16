@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "349838165718",
+    "project_id": "student-dormitorry-helpe-da985",
+    "storage_bucket": "student-dormitorry-helpe-da985.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:349838165718:android:c0d59bb2513c05f733eb77",
+        "android_client_info": {
+          "package_name": "com.example.student_dormitorryhelper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "349838165718-fqgi7d6v9e2an3l56ckmo3ivkqjleo0h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAz28TE2wwlsNlRtFruS8mofivdPkE2lyI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "349838165718-fqgi7d6v9e2an3l56ckmo3ivkqjleo0h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

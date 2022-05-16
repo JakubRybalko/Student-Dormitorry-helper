@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.plan.PlanFragment">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="2"
+        android:rowCount="3"
+        android:padding="@dimen/_4sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="@dimen/_38sdp">
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/funRoom"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@drawable/background_button_plan"
+            android:text="Pokój gier \n i zabaw"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/studyRoom"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_width="wrap_content"
+            android:background="@drawable/background_button_plan"
+            android:text="Pokój cichej \n nauki"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/laundry"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@drawable/background_button_plan"
+            android:text="Pralki"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bikeRoom"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@drawable/background_button_plan"
+            android:text="Rowerownia"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/administration"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@drawable/background_button_plan"
+            android:text="Administracja"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/banquet"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@drawable/background_button_plan"
+            android:text=" bankietówka  "
+            android:textColor="@color/white" />
+    </GridLayout>
+
+    <View
+        android:id="@+id/grayBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CF000000"
+        android:visibility="gone"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerPlan"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:name="com.example.student_dormitorryhelper.ui.plan.PlanDescriptionFragment"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="450dp"
+    android:background="@drawable/background_description"
+    android:layout_gravity="center"
+    android:layout_marginHorizontal="@dimen/_32sdp"
+    tools:context=".ui.plan.PlanBanquetFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:text="Sala bankietowa"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/_20ssp"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/description_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:text="Sala w której znajduje się stół do bilarda, stół do tenisa stołowego
+        oraz piłkarzyki. Istnieje możliwość wynajęcia sali za darmo w ciągu dnia, lub za opłatą na całą noc."
+        android:textColor="@color/secondary_text"
+        android:textStyle="italic"
+        android:gravity="center"
+        android:textSize="@dimen/_14ssp"/>
+
+    <TextView
+        android:id="@+id/localization"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lokalizacja"
+        android:textStyle="bold"
+        android:textSize="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        app:layout_constraintTop_toBottomOf="@id/description_text"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="parter"
+        android:textStyle="bold"
+        android:textSize="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        app:layout_constraintTop_toBottomOf="@id/description_text"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/keeper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Opiekun"
+        android:textStyle="bold"
+        android:textSize="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        app:layout_constraintTop_toBottomOf="@id/localization"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bartosz Jusiak"
+        android:textStyle="bold"
+        android:textSize="@dimen/_14sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="@id/keeper"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/closeDescription"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/background_descriptor_button"
+        android:text="@string/zamknij"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="@dimen/_16sdp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
