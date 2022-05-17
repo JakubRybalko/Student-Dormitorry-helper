@@ -2,6 +2,7 @@ package com.example.student_dormitorryhelper.ui.chat;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import androidx.navigation.Navigation;
 
 import com.example.student_dormitorryhelper.R;
 import com.example.student_dormitorryhelper.databinding.FragmentChatBinding;
+import com.example.student_dormitorryhelper.ui.plan.PlanDescriptionFragment;
 import com.example.student_dormitorryhelper.utilities.Constants;
 import com.example.student_dormitorryhelper.utilities.UserManager;
 import com.facebook.AccessToken;
@@ -35,6 +37,7 @@ public class ChatFragment extends Fragment {
     private TextView nameText;
     private UserManager userManager;
     private FirebaseFirestore database;
+//    private ResidentsCouncilChatFragment residentsCouncilChatFragment;
 
     @SuppressLint("SetTextI18n")
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -63,11 +66,13 @@ public class ChatFragment extends Fragment {
 
     private void setListeners() {
         binding.buttonAddChat.setOnClickListener(v -> {
-            UsersFragment usersFragment= new UsersFragment();
-            getActivity().getSupportFragmentManager().beginTransaction()
-                .replace(R.id.nav_host_fragment_activity_main, usersFragment)
-                .addToBackStack(null)
-                .commit();
+//            UsersFragment usersFragment= new UsersFragment();
+//            getActivity().getSupportFragmentManager().beginTransaction()
+//                .replace(R.id.nav_host_fragment_activity_main, usersFragment)
+//                .addToBackStack(null)
+//                .commit();
+            setUsersVisible();
+//            setChatVisible();
         });
     }
 
@@ -104,5 +109,19 @@ public class ChatFragment extends Fragment {
                 .document(userManager.getFbUserId());
         documentReference.update(Constants.KEY_FCM_TOKEN, token)
             .addOnFailureListener(e -> showToast("Unable to update token"));
+    }
+
+    private void setUsersVisible() {
+        binding.chatFragmentContainer.setVisibility(View.GONE);
+        binding.userFragmentContainer.setVisibility(View.VISIBLE);
+    }
+
+    public void setChatVisible() {
+        loadUserDetails();
+        binding.chatFragmentContainer.setVisibility(View.VISIBLE);
+        binding.userFragmentContainer.setVisibility(View.GONE);
+        ResidentsCouncilChatFragment fr = (ResidentsCouncilChatFragment)
+            getChildFragmentManager().findFragmentById(binding.chatFragmentContainer.getId());
+        fr.init();
     }
 }

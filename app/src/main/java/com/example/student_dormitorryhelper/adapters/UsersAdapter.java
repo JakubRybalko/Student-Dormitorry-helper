@@ -66,6 +66,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHold
           .fit()
           .centerCrop()
           .into(binding.imageProfile);
+      binding.getRoot().setOnClickListener(v -> userListener.onUserClicked(user));
     }
   }
 }

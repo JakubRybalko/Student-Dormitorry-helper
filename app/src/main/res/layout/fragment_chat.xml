@@ -62,16 +62,49 @@
         app:layout_constraintStart_toEndOf="@+id/imageProfile"
         app:layout_constraintTop_toTopOf="@+id/imageProfile" />
 
-    <FrameLayout
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/chatFragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/_16sdp"
         android:background="@drawable/background_content_bottom"
         app:layout_constraintBottom_toTopOf="@id/nav_view"
-        app:layout_constraintTop_toBottomOf="@id/imageProfile" >
+        app:layout_constraintTop_toBottomOf="@id/imageProfile"
+        android:name="com.example.student_dormitorryhelper.ui.chat.ResidentsCouncilChatFragment" />
+
+<!--    <FrameLayout-->
+<!--        android:id="@+id/chatFragmentContainer"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:visibility="gone"-->
+<!--        android:layout_marginTop="@dimen/_16sdp"-->
+<!--        android:background="@drawable/background_content_bottom"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/nav_view"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/imageProfile" >-->
+
+<!--        <fragment-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            app:defaultNavHost="true"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            android:name="com.example.student_dormitorryhelper.ui.chat.ResidentsCouncilChatFragment" />-->
+
+<!--    </FrameLayout>-->
+
+    <FrameLayout
+        android:id="@+id/userFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:background="@drawable/background_content_bottom"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"
+        app:layout_constraintTop_toTopOf="parent" >
 
         <fragment
-            android:id="@+id/conversationFragment"
+            android:id="@+id/userSelectFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:defaultNavHost="true"
@@ -79,7 +112,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:name="com.example.student_dormitorryhelper.ui.chat.ResidentsCouncilChatFragment" />
+            android:name="com.example.student_dormitorryhelper.ui.chat.UsersFragment" />
 
     </FrameLayout>
 

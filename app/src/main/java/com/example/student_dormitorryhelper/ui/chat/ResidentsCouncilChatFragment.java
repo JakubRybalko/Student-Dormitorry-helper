@@ -47,7 +47,7 @@ public class ResidentsCouncilChatFragment extends Fragment {
     return binding.getRoot();
   }
 
-  private void init() {
+  public void init() {
     userManager = UserManager.getInstance();
     chatMessageList = new ArrayList<>();
     chatAdapter = new ChatAdapter(
