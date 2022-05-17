@@ -3,19 +3,16 @@ package com.example.student_dormitorryhelper.ui.chat;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.student_dormitorryhelper.R;
 import com.example.student_dormitorryhelper.adapters.UsersAdapter;
 import com.example.student_dormitorryhelper.databinding.FragmentUsersBinding;
 import com.example.student_dormitorryhelper.listeners.UserListener;
 import com.example.student_dormitorryhelper.models.User;
-import com.example.student_dormitorryhelper.ui.plan.PlanFragment;
 import com.example.student_dormitorryhelper.utilities.Constants;
 import com.example.student_dormitorryhelper.utilities.UserManager;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -42,12 +39,6 @@ public class UsersFragment extends Fragment implements UserListener {
 
   private void setListeners() {
     binding.imageBack.setOnClickListener(view -> {
-//      ChatFragment chatFragment= new ChatFragment();
-//      getActivity().getSupportFragmentManager().beginTransaction()
-//          .replace(R.id.nav_host_fragment_activity_main, chatFragment)
-//          .addToBackStack(null)
-//          .commit();
-//    getParentFragmentManager().popBackStackImmediate();
       ChatFragment chatFragment = (ChatFragment) getParentFragment();
       chatFragment.setChatVisible();
     });
@@ -105,14 +96,7 @@ public class UsersFragment extends Fragment implements UserListener {
   public void onUserClicked(User user) {
     Log.d("CHAT", "bylo tu");
     userManager.setSendToUser(user);
-//    ChatFragment chatFragment= new ChatFragment();
-//    getActivity().getSupportFragmentManager().beginTransaction()
-//        .replace(R.id.nav_host_fragment_activity_main, chatFragment)
-//        .addToBackStack(null)
-//        .commit();
     ChatFragment chatFragment = (ChatFragment) getParentFragment();
-//    ChatFragment chatFragment = (ChatFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.chatFragmentContainer);
-//    Log.d("CHAT", "bylo tu");
     chatFragment.setChatVisible();
   }
 

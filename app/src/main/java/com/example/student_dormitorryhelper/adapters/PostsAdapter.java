@@ -1,6 +1,5 @@
 package com.example.student_dormitorryhelper.adapters;
 
-import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -8,14 +7,11 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.student_dormitorryhelper.databinding.ItemContainerDocumentsBinding;
 import com.example.student_dormitorryhelper.databinding.ItemContainerFbPostBinding;
-import com.example.student_dormitorryhelper.models.Document;
 import com.example.student_dormitorryhelper.models.FacebookPost;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
-import java.security.acl.Group;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -60,7 +56,6 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostViewHold
     void setPostsData(FacebookPost facebookPost) {
       SimpleDateFormat simpleDate =  new SimpleDateFormat("dd/MM/yyyy");
       binding.messageDate.setText(simpleDate.format(facebookPost.getCreatedTime()));
-//      binding.messageDate.setText("XDDD");
       binding.messageText.setText(facebookPost.getMessage());
 
       Picasso.get()

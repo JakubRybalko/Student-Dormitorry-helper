@@ -85,49 +85,6 @@ public class HomeFragment extends Fragment {
             });
     }
 
-    void loadData() {
-        loading(true);
-        GraphRequest graphRequest = new GraphRequest(
-            AccessToken.getCurrentAccessToken(),
-            "/" + Constants.KEY_FB_PAGE_ID + "/feed",
-            null,
-            HttpMethod.GET,
-            new GraphRequest.Callback() {
-                @RequiresApi(api = Build.VERSION_CODES.N)
-                public void onCompleted(GraphResponse response) {
-                    loading(false);
-                    ObjectMapper mapper = new ObjectMapper();
-                    try {
-                        String json = Objects.requireNonNull(response.getJSONObject()).getString("data");
-                        posts = mapper.readValue(json,
-                            mapper.getTypeFactory().constructCollectionType(List.class, FacebookPost.class));
-                        posts = posts.stream()
-                            .filter(i -> i.getMessage() != null
-                                && i.getFrom() != null && i.getFrom().get("name").equals(Constants.KEY_RESIDENT_COUNCIL_POSTS_NAME))
-                            .collect(Collectors.toList());
-                        Log.d("FB", posts.get(0).getFull_picture());
-                        if(posts.size() > 0) {
-                            PostsAdapter postsAdapter = new PostsAdapter(posts);
-                            binding.postsRecyclerView.setAdapter(postsAdapter);
-                            binding.postsRecyclerView.setVisibility(View.VISIBLE);
-                        } else {
-                            showErrorMessage();
-                        }
-                    } catch (IOException | JSONException e) {
-                        e.printStackTrace();
-                        Log.d("FB", e.toString());
-                        showErrorMessage();
-                    }
-                }
-            }
-        );
-
-        Bundle parameters = new Bundle();
-        parameters.putString("fields", "id, created_time, message, full_picture, from");
-        graphRequest.setParameters(parameters);
-        graphRequest.executeAsync();
-    }
-
     private void loading(Boolean isLoading) {
         if(isLoading) {
             binding.progressBar.setVisibility(View.VISIBLE);

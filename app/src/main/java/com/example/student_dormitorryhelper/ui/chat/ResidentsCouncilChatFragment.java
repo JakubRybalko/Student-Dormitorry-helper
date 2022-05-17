@@ -8,11 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.student_dormitorryhelper.R;
 import com.example.student_dormitorryhelper.adapters.ChatAdapter;
 import com.example.student_dormitorryhelper.databinding.FragmentResidentsCouncilChatBinding;
 import com.example.student_dormitorryhelper.models.ChatMessage;
-import com.example.student_dormitorryhelper.models.User;
 import com.example.student_dormitorryhelper.utilities.Constants;
 import com.example.student_dormitorryhelper.utilities.UserManager;
 import com.google.firebase.firestore.DocumentChange;
@@ -22,7 +20,6 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;

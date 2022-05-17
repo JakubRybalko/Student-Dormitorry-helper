@@ -23,9 +23,6 @@ import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
-import com.facebook.FacebookSdk;
-import com.facebook.GraphRequest;
-import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
@@ -37,15 +34,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.squareup.picasso.Picasso;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.HashMap;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -179,8 +167,6 @@ public class SignInActivity extends AppCompatActivity {
             userManager.setUserData();
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
             });
-//        materialButton.setOnClickListener(v -> addDataToFirestore());
-
     }
 
     @Override

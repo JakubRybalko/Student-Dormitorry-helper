@@ -7,7 +7,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.student_dormitorryhelper.databinding.ItemContainerDocumentsBinding;
-import com.example.student_dormitorryhelper.databinding.ItemContainerUserBinding;
 import com.example.student_dormitorryhelper.listeners.DocumentListener;
 import com.example.student_dormitorryhelper.models.Document;
 

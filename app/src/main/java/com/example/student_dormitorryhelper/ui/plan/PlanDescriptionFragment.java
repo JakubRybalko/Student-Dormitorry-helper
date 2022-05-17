@@ -4,22 +4,15 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.student_dormitorryhelper.R;
-import com.example.student_dormitorryhelper.adapters.DocumentsAdapter;
 import com.example.student_dormitorryhelper.databinding.FragmentPlanDescriptionBinding;
-import com.example.student_dormitorryhelper.models.Document;
-import com.example.student_dormitorryhelper.ui.chat.UsersFragment;
 import com.example.student_dormitorryhelper.utilities.Constants;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class PlanDescriptionFragment extends Fragment {
 

@@ -2,7 +2,6 @@ package com.example.student_dormitorryhelper.ui.chat;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,26 +9,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
-import com.example.student_dormitorryhelper.R;
 import com.example.student_dormitorryhelper.databinding.FragmentChatBinding;
-import com.example.student_dormitorryhelper.ui.plan.PlanDescriptionFragment;
 import com.example.student_dormitorryhelper.utilities.Constants;
 import com.example.student_dormitorryhelper.utilities.UserManager;
 import com.facebook.AccessToken;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.squareup.picasso.Picasso;
 
-import java.util.HashMap;
 
 public class ChatFragment extends Fragment {
 
@@ -37,7 +28,6 @@ public class ChatFragment extends Fragment {
     private TextView nameText;
     private UserManager userManager;
     private FirebaseFirestore database;
-//    private ResidentsCouncilChatFragment residentsCouncilChatFragment;
 
     @SuppressLint("SetTextI18n")
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -66,13 +56,7 @@ public class ChatFragment extends Fragment {
 
     private void setListeners() {
         binding.buttonAddChat.setOnClickListener(v -> {
-//            UsersFragment usersFragment= new UsersFragment();
-//            getActivity().getSupportFragmentManager().beginTransaction()
-//                .replace(R.id.nav_host_fragment_activity_main, usersFragment)
-//                .addToBackStack(null)
-//                .commit();
             setUsersVisible();
-//            setChatVisible();
         });
     }
 

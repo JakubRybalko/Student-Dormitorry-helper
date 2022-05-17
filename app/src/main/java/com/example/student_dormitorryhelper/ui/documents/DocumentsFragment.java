@@ -1,18 +1,13 @@
 package com.example.student_dormitorryhelper.ui.documents;
 
 import android.Manifest;
-import android.app.DownloadManager;
-import android.content.ActivityNotFoundException;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
@@ -27,7 +22,6 @@ import com.example.student_dormitorryhelper.utilities.Constants;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
